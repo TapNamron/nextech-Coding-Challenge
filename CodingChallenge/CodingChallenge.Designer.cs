@@ -33,6 +33,7 @@
       this.clmAuthor = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
       this.btnSearch = new System.Windows.Forms.Button();
       this.txtSearch = new System.Windows.Forms.TextBox();
+      this.btnExit = new System.Windows.Forms.Button();
       this.SuspendLayout();
       // 
       // lstStories
@@ -53,7 +54,6 @@
       this.lstStories.DrawColumnHeader += new System.Windows.Forms.DrawListViewColumnHeaderEventHandler(this.lstStories_DrawColumnHeader);
       this.lstStories.DrawItem += new System.Windows.Forms.DrawListViewItemEventHandler(this.lstStories_DrawItem);
       this.lstStories.DrawSubItem += new System.Windows.Forms.DrawListViewSubItemEventHandler(this.lstStories_DrawSubItem);
-      this.lstStories.SelectedIndexChanged += new System.EventHandler(this.lstStories_SelectedIndexChanged);
       // 
       // clmTitle
       // 
@@ -67,7 +67,7 @@
       // 
       // btnSearch
       // 
-      this.btnSearch.Location = new System.Drawing.Point(203, 219);
+      this.btnSearch.Location = new System.Drawing.Point(192, 219);
       this.btnSearch.Name = "btnSearch";
       this.btnSearch.Size = new System.Drawing.Size(75, 23);
       this.btnSearch.TabIndex = 1;
@@ -83,11 +83,22 @@
       this.txtSearch.TabIndex = 2;
       this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
       // 
+      // btnExit
+      // 
+      this.btnExit.Location = new System.Drawing.Point(408, 219);
+      this.btnExit.Name = "btnExit";
+      this.btnExit.Size = new System.Drawing.Size(75, 23);
+      this.btnExit.TabIndex = 3;
+      this.btnExit.Text = "Exit";
+      this.btnExit.UseVisualStyleBackColor = true;
+      this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+      // 
       // CodingChallenge
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.ClientSize = new System.Drawing.Size(506, 291);
+      this.ClientSize = new System.Drawing.Size(506, 268);
+      this.Controls.Add(this.btnExit);
       this.Controls.Add(this.txtSearch);
       this.Controls.Add(this.btnSearch);
       this.Controls.Add(this.lstStories);
@@ -106,6 +117,7 @@
     private System.Windows.Forms.ColumnHeader clmAuthor;
     private System.Windows.Forms.Button btnSearch;
     private System.Windows.Forms.TextBox txtSearch;
+    private System.Windows.Forms.Button btnExit;
   }
 }
 

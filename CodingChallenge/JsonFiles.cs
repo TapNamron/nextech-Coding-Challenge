@@ -7,7 +7,7 @@ using System.Net.Http;
 using System.Diagnostics;
 using System.Windows.Forms;
 using Newtonsoft.Json;
-
+using System.Reflection;
 
 namespace CodingChallenge
 {
@@ -16,7 +16,7 @@ namespace CodingChallenge
     public async void ReadJsonFilesAsync(List<string> URLs, ListView lstStories)
     {
       try
-      {
+      {// iterate through json links provided by github
         foreach (string ListURLs in URLs)
         {
           using (var httpClient = new HttpClient())
@@ -31,13 +31,12 @@ namespace CodingChallenge
             string[] row = { strTitle, strAuthor };
             var listViewItem = new ListViewItem(row);
             lstStories.Items.Add(listViewItem);
-
           }
         }
       }
       catch(Exception ex)
       {
-        MessageBox.Show(ex.Message, "Error message");
+        MessageBox.Show("Exception occurred in the " + MethodBase.GetCurrentMethod().Name + " method. \n\n" + ex.Message, "JsonFiles Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
       }
     }
   }
